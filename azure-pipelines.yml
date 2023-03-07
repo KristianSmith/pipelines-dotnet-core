@@ -1,4 +1,10 @@
 # ASP.NET Core
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'Ubuntu'
+    runOptions: 'commands'
+    commands: 'cat > sample.txt'
+    readyTimeout: '20000'
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'TahomaCrest'
