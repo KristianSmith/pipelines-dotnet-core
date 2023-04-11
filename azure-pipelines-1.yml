@@ -18,7 +18,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo ${{ yesNo.Value }}
+- ${{ each parameter in parameters }}:
+  - script: echo '${{ parameter.Key }} -> ${{ parameter.Value }}'
   displayName: 'Run a one-line script'
 
 
