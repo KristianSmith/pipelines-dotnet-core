@@ -18,7 +18,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo $yesNo
+- script: echo ${{ yesNo.Value }}
   displayName: 'Run a one-line script'
 
 
