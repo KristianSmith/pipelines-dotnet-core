@@ -8,6 +8,9 @@
 trigger:
 - master
 
+variables:
+  testVariable:
+
 # File: simple-param.yml
 parameters:
 - name: yesNo # name of the parameter; required
@@ -19,6 +22,7 @@ pool:
 
 steps:
   - script: echo ${{ parameters.yesNo}}
+            echo ${{variables.testVariable}}
     displayName: 'Run a one-line script'
 
 
