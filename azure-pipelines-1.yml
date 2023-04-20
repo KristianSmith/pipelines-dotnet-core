@@ -8,8 +8,7 @@
 trigger:
 - master
 
-variables:
-  testVariable: "testValue"
+
 
 # File: simple-param.yml
 parameters:
@@ -17,12 +16,17 @@ parameters:
   type: boolean # data type of the parameter; required
   default: false
 
+variables:
+  ${{ if eq(parameters.yesNo, true) }}:
+    testVar: noWayItWorked
 
 pool:
   vmImage: ubuntu-latest
 
+
 steps:
   - script: echo ${{ parameters.yesNo}}
+            echo $testVar
     displayName: 'Run a one-line script'
 
 
