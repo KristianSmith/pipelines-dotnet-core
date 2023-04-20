@@ -26,7 +26,7 @@ pool:
 
 steps:
   - script: echo ${{ parameters.yesNo}}
-            echo $testVar
+            echo $(testVar)
     displayName: 'Run a one-line script'
 
 
