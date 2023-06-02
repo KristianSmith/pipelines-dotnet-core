@@ -21,7 +21,7 @@ variables:
     testVar: noWayItWorked
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 
 steps:
