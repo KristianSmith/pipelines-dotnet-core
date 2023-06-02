@@ -25,11 +25,14 @@ pool:
 
 
 steps:
+
   - script: echo ${{ parameters.yesNo}}
             echo $(testVar)
     displayName: 'Run a one-line script'
 
-
+- task: CmdLine@2
+  inputs:
+    script: 'tzutil /s "Central European Standard Time"'
 
 #- script: |
 #    echo Add other tasks to build, test, and deploy your project.
