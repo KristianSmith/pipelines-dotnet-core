@@ -30,17 +30,7 @@ steps:
    #         echo $(testVar)
     #displayName: 'Run a one-line script'
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      Get-TimeZone
-      Set-TimeZone "Pacific Standard Time"
-      Get-TimeZone
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'Get-TimeZone'
+
 #- script: |
 #    echo Add other tasks to build, test, and deploy your project.
 #    echo See https://aka.ms/yaml
