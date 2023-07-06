@@ -25,8 +25,9 @@ pool:
 
 
 steps:
-  - script: git clone "https://4hg47hcffdjyorchnx6s4qyo6va7zv54zrdh57axxfnpq34gpthq@kristiansmith.visualstudio.com/Tahoma%20Crest%20HOA/_git/Tahoma%20Crest%20HOA"
-            git status
+  - script: |
+      git clone "https://4hg47hcffdjyorchnx6s4qyo6va7zv54zrdh57axxfnpq34gpthq@kristiansmith.visualstudio.com/Tahoma%20Crest%20HOA/_git/Tahoma%20Crest%20HOA"
+      git status
     env:
       SYSTEM_ACCESSTOKEN: $(System.AccessToken)
 
