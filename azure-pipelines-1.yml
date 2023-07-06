@@ -26,14 +26,10 @@ pool:
 
 steps:
   - bash: echo This script could use $SYSTEM_ACCESSTOKEN
+          git clone https://4hg47hcffdjyorchnx6s4qyo6va7zv54zrdh57axxfnpq34gpthq@kristiansmith.visualstudio.com/Tahoma%20Crest%20HOA/_git/Tahoma%20Crest%20HOA
     env:
       SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-  - powershell: | 
-      Write-Host "This is a script that could use $env:SYSTEM_ACCESSTOKEN"
-      Write-Host "$env:SYSTEM_ACCESSTOKEN = $(System.AccessToken)"
-      Write-Host "This is a script that could use $(SYSTEM_ACCESSTOKEN)"
-    env:
-      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+
   #- script: echo ${{ parameters.yesNo}}
    #         echo $(testVar)
     #displayName: 'Run a one-line script'
