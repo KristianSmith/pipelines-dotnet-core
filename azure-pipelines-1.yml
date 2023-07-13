@@ -25,14 +25,17 @@ pool:
 
 
 steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Tahoma Crest'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'echo "Hello World"'
 - checkout: self
   persistCredentials: true
 
 - script: |
-      git config --global user.email "smith_kristian@outlook.com"
-      git config --global user.name "Kristian Smith"
-      git status
-      git clone https://kristiansmith.visualstudio.com/Tahoma%20Crest%20HOA/_git/Tahoma%20Crest%20HOA
+
 
   #- script: echo ${{ parameters.yesNo}}
    #         echo $(testVar)
