@@ -19,12 +19,23 @@ parameters:
 variables:
   ${{ if eq(parameters.yesNo, true) }}:
     testVar: noWayItWorked
+  npm_config_cache: $(Pipeline.Workspace)/.npm
 
 pool:
   vmImage: windows-latest
 
 
 steps:
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | package-lock.json'
+    restoreKeys: |
+       npm | "$(Agent.OS)"
+    path: $(npm_config_cache)
+  displayName: Cache npm
+
+- script: npm ci
+
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'Tahoma Crest'
