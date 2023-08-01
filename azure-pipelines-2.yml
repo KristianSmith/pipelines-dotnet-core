@@ -16,7 +16,7 @@ steps:
 - task: GoTool@0
   retryCountOnTaskFailure: 3
   inputs:
-    version: '1.19.1'
+    version: "$(GO_VERSION)"
     goPath: '"$(System.DefaultWorkingDirectory)/go"'
     goBin: '"$(GOPATH)/bin"'
 - script: |
