@@ -13,7 +13,7 @@ steps:
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
-- bash: az devops configure -l
+- bash: az devops configure --defaults organization=https://dev.azure.com/kristiansmith project="Tahoma Crest HOA"
   displayName: 'Set default Azure DevOps organization and project'
 
 - bash: |
