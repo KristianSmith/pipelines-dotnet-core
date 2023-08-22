@@ -18,7 +18,6 @@ steps:
 
 - bash: |
     az pipelines build list
-    git pr list
   displayName: 'Show build list and PRs'
   env:
     AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
