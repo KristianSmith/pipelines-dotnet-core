@@ -10,6 +10,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Visual Studio Enterprise(1)(a6cb92d8-aff0-4375-8f6f-cd22559a247d)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az config set extension.use_dynamic_install=yes_without_prompt
+      az pipelines variable-group show --group-id 467
+
+
 - bash: az --version
   displayName: 'Show Azure CLI version'
 
