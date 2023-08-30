@@ -11,6 +11,9 @@ pool:
 
 steps:
 - task: AzureCLI@2
+  continueOnError: true
+  env:
+    AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
   inputs:
     azureSubscription: 'Visual Studio Enterprise(1)(a6cb92d8-aff0-4375-8f6f-cd22559a247d)'
     scriptType: 'bash'
